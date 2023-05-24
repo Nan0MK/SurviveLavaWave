@@ -1,0 +1,16 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/survive_the_lava_wave
+survive_the_lava_wave.so
+survive_the_lava_wave.dylib
+survive_the_lava_wave.dll
+survive_the_lava_wave.a
+survive_the_lava_wave.lib
+survive_the_lava_wave-test-*
+*.exe
+*.pdb
+*.o
+*.obj
+*.lst

@@ -1,0 +1,17 @@
+{
+	"authors": [
+		"Nan0MK"
+	],
+	"copyright": "Copyright © 2023, Nan0MK",
+	"dependencies": {
+		"raylib-d": "~>4.5.1"
+	},
+	"description": "A game about surviving lava*",
+	"license": "MIT",
+	"name": "survive_the_lava_wave",
+	
+	"libs": [ "raylib" ],
+    "lflags-posix" : ["-L."],
+    "lflags-osx" : ["-rpath", "@executable_path/"],
+    "lflags-linux" : ["-rpath=$$ORIGIN"]
+}
