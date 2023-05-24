@@ -1,4 +1,5 @@
 module entities;
+import core.stdc.string;
 import raylib;
 
 class Entity{
@@ -40,4 +41,25 @@ class SquareTile : Entity{
     void draw_me(){
         DrawRectangle(pos_x, pos_y, size_x, size_y, tile_color);
     }
+}
+
+bool isColliding(SquareTile a, SquareTile b) {
+    if (a.pos_x < b.pos_x + b.size_x &&
+        a.pos_x + a.size_x > b.pos_x &&
+        a.pos_y < b.pos_y + b.size_y &&
+        a.pos_y + a.size_y > b.pos_y) {
+        return true;
+    }
+    return false;
+}
+
+const (char)* show_collision_status(SquareTile a, SquareTile b){
+    const (char)* sout = "none".ptr;
+    if(isColliding(a, b)){
+        sout = "True".ptr;
+    }
+    if(!isColliding(a, b)){
+        sout = "False".ptr;
+    }
+    return sout;
 }
