@@ -43,7 +43,7 @@ class SquareTile : Entity{
     }
 }
 
-bool isColliding(SquareTile a, SquareTile b) {
+bool is_colliding(SquareTile a, SquareTile b) {
     if (a.pos_x < b.pos_x + b.size_x &&
         a.pos_x + a.size_x > b.pos_x &&
         a.pos_y < b.pos_y + b.size_y &&
@@ -55,10 +55,10 @@ bool isColliding(SquareTile a, SquareTile b) {
 
 const (char)* show_collision_status(SquareTile a, SquareTile b){
     const (char)* sout = "none".ptr;
-    if(isColliding(a, b)){
+    if(is_colliding(a, b)){
         sout = "True".ptr;
     }
-    if(!isColliding(a, b)){
+    if(!is_colliding(a, b)){
         sout = "False".ptr;
     }
     return sout;

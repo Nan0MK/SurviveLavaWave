@@ -23,12 +23,12 @@ void main(){
         ClearBackground(Colors.RAYWHITE);
         //Gameloop
 
-        DrawText("Survive The Lava Wave!", 400, 300, 28, Colors.BLACK);
-
         if(IsKeyDown(KeyboardKey.KEY_W)){the_player.pos_y --;}
         if(IsKeyDown(KeyboardKey.KEY_S)){the_player.pos_y ++;}
         if(IsKeyDown(KeyboardKey.KEY_A)){the_player.pos_x --;}
         if(IsKeyDown(KeyboardKey.KEY_D)){the_player.pos_x ++;}
+
+        //Now to make collision stop movement
 
         the_ground.draw_me();
         the_player.draw_me();
