@@ -2,6 +2,10 @@ import std.stdio;
 import raylib;
 
 import entities;
+import utils;
+
+int move_speed = 5;
+
 
 
 void main(){
@@ -23,10 +27,7 @@ void main(){
         ClearBackground(Colors.RAYWHITE);
         //Gameloop
 
-        if(IsKeyDown(KeyboardKey.KEY_W)){the_player.pos_y --;}
-        if(IsKeyDown(KeyboardKey.KEY_S)){the_player.pos_y ++;}
-        if(IsKeyDown(KeyboardKey.KEY_A)){the_player.pos_x --;}
-        if(IsKeyDown(KeyboardKey.KEY_D)){the_player.pos_x ++;}
+        movement_with_collision(the_player, the_ground, move_speed);
 
         //Now to make collision stop movement
 

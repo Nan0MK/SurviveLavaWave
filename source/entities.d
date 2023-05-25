@@ -1,4 +1,5 @@
 module entities;
+
 import core.stdc.string;
 import raylib;
 
