@@ -28,6 +28,7 @@ void main(){
         //Gameloop
 
         movement_with_collision(the_player, the_ground, move_speed);
+        //movement(the_player, move_speed);
 
         //Now to make collision stop movement
 
@@ -35,7 +36,6 @@ void main(){
         the_player.draw_me();
 
         DrawText(show_collision_status(the_ground, the_player), 400, 300, 30, Colors.BLUE);
-        //DrawCircle(the_ground.edge_top_x, the_ground.edge_bot, 30, Colors.BROWN);
 
         //Gameloop
         EndDrawing();
