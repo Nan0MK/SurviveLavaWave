@@ -6,8 +6,6 @@ import utils;
 
 int move_speed = 5;
 
-
-
 void main(){
 
 	writeln("Survive The Lava Wave!");
@@ -40,8 +38,6 @@ void main(){
 
         movement_with_collision(the_player, tileHolder, move_speed);
         //movement(the_player, move_speed);
-
-        //Now to make collision stop movement
 
         tile0.draw_me();
         tile1.draw_me();
