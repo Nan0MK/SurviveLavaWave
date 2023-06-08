@@ -23,7 +23,7 @@ void main(){
     player_collision_layer ~= tile3;
     player_collision_layer ~= tile4;
 
-    auto the_player = new Entity(100, 400, 30, 30, Colors.GREEN);
+    auto the_player = new Entity(145, 400, 30, 30, Colors.GREEN);
 
 
 	// call this before using raylib
@@ -36,7 +36,7 @@ void main(){
         ClearBackground(Colors.RAYWHITE);
         //Gameloop start
 
-        movement_with_collision(the_player, player_collision_layer, move_speed);
+        movement_with_collision_gravity(the_player, player_collision_layer, move_speed);
 
         //Drawing section
         tile0.draw_me();
