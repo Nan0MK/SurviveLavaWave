@@ -4,12 +4,10 @@ import core.stdc.string;
 import raylib;
 
 class Entity{
+    Colors entity_color;
     int pos_x;
     int pos_y;
-}
 
-class SquareTile : Entity{
-    Colors tile_color;
     int size_x;
     int size_y;
 
@@ -27,7 +25,7 @@ class SquareTile : Entity{
         pos_y = yIn;
         size_x = sizeIn_x;
         size_y = sizeIn_y;
-        tile_color = colorIn;
+        entity_color = colorIn;
 
         edge_top = pos_y - size_y;
         edge_top_x = pos_x + pos_x;
@@ -40,6 +38,6 @@ class SquareTile : Entity{
     }
 
     void draw_me(){
-        DrawRectangle(pos_x, pos_y, size_x, size_y, tile_color);
+        DrawRectangle(pos_x, pos_y, size_x, size_y, entity_color);
     }
 }
