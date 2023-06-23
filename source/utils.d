@@ -71,16 +71,17 @@ void movement_with_collision(Entity movingThing, Entity[] staticThings, int move
 
 //Movement With Collision And Gravity
 //I need to implement this somehow
-int jump_height = 25;
+int jump_height = 15;
+int fall_speed = 2;
 void movement_with_collision_gravity(Entity movingThing, Entity[] staticThings, int movementSpeed){
     
     foreach (staticThing; staticThings){
         if(!is_colliding(movingThing, staticThing)){
-            movingThing.pos_y += 10;
+            movingThing.pos_y += fall_speed;
             break;
         }
         if(is_colliding(movingThing, staticThing)){
-            movingThing.pos_y += 0;
+            movingThing.pos_y /= fall_speed;
             break;
         }
     }
