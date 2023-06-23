@@ -12,7 +12,7 @@ void main(){
 
     auto tile0 = new Entity(140, 480, 70, 70, Colors.RED);
     auto tile1 = new Entity(tile0.pos_x + 140, 480, 70, 70, tile0.entity_color);
-    auto tile2 = new Entity(tile1.pos_x + 140, 480, 70, 70, tile0.entity_color);
+    auto tile2 = new Entity(tile1.pos_x + 140, 480, 30, 70, tile0.entity_color);
     auto tile3 = new Entity(tile2.pos_x + 140, 480, 70, 70, tile0.entity_color);
     auto tile4 = new Entity(tile3.pos_x + 140, 480, 70, 70, tile0.entity_color);
 
@@ -36,7 +36,7 @@ void main(){
         ClearBackground(Colors.RAYWHITE);
         //Gameloop start
 
-        movement_with_collision_gravity(the_player, player_collision_layer, move_speed);
+        movement_with_collision(the_player, player_collision_layer, move_speed);
 
         //Drawing section
         tile0.draw_me();

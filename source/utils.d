@@ -16,8 +16,6 @@ bool is_colliding(Entity a, Entity b) {
     return false;
 }
 
-
-
 const (char)* show_collision_status(Entity a, Entity b){
     const (char)* sout = "none".ptr;
     if(is_colliding(a, b)){
@@ -58,65 +56,6 @@ void movement_with_collision(Entity movingThing, Entity[] staticThings, int move
             }
         }
     }
-    if(IsKeyDown(KeyboardKey.KEY_D)){
-        movingThing.pos_x += movementSpeed;
-        foreach (staticThing; staticThings){
-            if(is_colliding(movingThing, staticThing)){
-                movingThing.pos_x -= movementSpeed;
-                break;
-            }
-        }
-    }
-}
-
-//Movement With Collision And Gravity
-//I need to implement this somehow
-int jump_height = 15;
-int fall_speed = 2;
-void movement_with_collision_gravity(Entity movingThing, Entity[] staticThings, int movementSpeed){
-    
-    foreach (staticThing; staticThings){
-        if(!is_colliding(movingThing, staticThing)){
-            movingThing.pos_y += fall_speed;
-            break;
-        }
-        if(is_colliding(movingThing, staticThing)){
-            movingThing.pos_y /= fall_speed;
-            break;
-        }
-    }
-    
-    
-    if(IsKeyDown(KeyboardKey.KEY_SPACE)){
-        movingThing.pos_y -= jump_height;
-        foreach (staticThing; staticThings){
-            if(is_colliding(movingThing, staticThing)){
-                movingThing.pos_y += movementSpeed;
-                break;
-            }
-        }
-    }
-
-    if(IsKeyDown(KeyboardKey.KEY_LEFT_SHIFT)){
-        movingThing.pos_y += movementSpeed;
-        foreach (staticThing; staticThings){
-            if(is_colliding(movingThing, staticThing)){
-                movingThing.pos_y -= movementSpeed;
-                break;
-            }
-        }
-    }
-
-    if(IsKeyDown(KeyboardKey.KEY_A)){
-        movingThing.pos_x -= movementSpeed;
-        foreach (staticThing; staticThings){
-            if(is_colliding(movingThing, staticThing)){
-                movingThing.pos_x += movementSpeed;
-                break;
-            }
-        }
-    }
-
     if(IsKeyDown(KeyboardKey.KEY_D)){
         movingThing.pos_x += movementSpeed;
         foreach (staticThing; staticThings){
