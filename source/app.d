@@ -25,10 +25,16 @@ void main(){
 
     auto the_player = new Entity(145, 400, 30, 30, Colors.GREEN);
 
-
 	// call this before using raylib
     validateRaylibBinding();
     InitWindow(800, 600, "Survive The Lava Wave!");
+
+    //Load texture here
+    Texture2D bricksLol = LoadTexture("resources/environment/bricks.png");
+    /*
+        Now to add textures to entities!
+    */
+
     SetTargetFPS(60);
     while (!WindowShouldClose()){
 		
@@ -40,6 +46,7 @@ void main(){
 
         //Drawing section
         tile0.draw_me();
+        DrawTexture(bricksLol, 150, 320, Colors.WHITE);
         tile1.draw_me();
         tile2.draw_me();
         tile3.draw_me();
@@ -49,5 +56,6 @@ void main(){
         //Gameloop end
         EndDrawing();
     }
+    UnloadTexture(bricksLol);
     CloseWindow();
 }
