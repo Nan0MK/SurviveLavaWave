@@ -33,6 +33,7 @@ void main(){
     Texture2D bricksLol = LoadTexture("resources/environment/bricks.png");
     /*
         Now to add textures to entities!
+        Also add a place where all texture files are loaded or assigned.
     */
 
     SetTargetFPS(60);
