@@ -5,6 +5,8 @@ import raylib;
 
 import entities;
 
+const int TILE_SIZE = 70;
+
 //Collision checker
 bool is_colliding(Entity a, Entity b) {
     if (a.pos_x < b.pos_x + b.size_x - 1 &&

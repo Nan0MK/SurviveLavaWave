@@ -2,6 +2,7 @@ module entities;
 
 import core.stdc.string;
 import raylib;
+import tile_map;
 
 class Entity{
     Colors entity_color;
@@ -21,6 +22,7 @@ class Entity{
     int edge_right;
 
     this(int xIn, int yIn, int sizeIn_x, int sizeIn_y, Colors colorIn){
+
         pos_x = xIn;
         pos_y = yIn;
         size_x = sizeIn_x;
